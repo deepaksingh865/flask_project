@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <p> <h1>Welcome to Update Portal</h1> </p>
+            <a href="{{ url_for('show') }}" > <button>Go to Home Page</button></a> <br> <br>
+            <form action="/update" method="POST">
+                <label for="id">Enter ID</label>
+                <input type="text" id="id" name="id" value="0"> <br> <br>
+                <label for="first">First name</label>
+                <input type="text" id="first" name="first" > <br><br>
+                <label for="last">Last name</label>
+                <input type="text" id="last"name="last" ><br><br>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" value="0"><br><br>
+                <input type="submit" id="sub" name="sub" value="submit"> <br><br>
+            </form>
+            <p style="color:red;"> {{status}} </p>
+            <table border="double">
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                  <p>Previous Data</p>
+                <tr>  
+                <td>{{PD[0]}}</td>
+                <td>{{PD[1]}}</td>
+                <td>{{PD[2]}}</td>
+                <td>{{PD[3]}}</td>
+                </tr>
+            </table>
+            <table border="double">
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                  <p>Updated Data</p>
+                <tr>  
+                <td>{{UD.id}}</td>
+                <td>{{UD.first}}</td>
+                <td>{{UD.last}}</td>
+                <td>{{UD.age}}</td>
+                </tr>
+            </table>
+        </body>
+    </head>
+</html>

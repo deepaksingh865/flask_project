@@ -1,0 +1,11 @@
+<html>
+   <body>
+    <p> <h2>Here Choose a file to Upload</h2> </p>
+      <form action = {{ url_for('uploader') }} method = "POST" enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+      <br> <br>
+      <a href="{{ url_for('show') }}" > <button>Go to Home Page</button></a>
+   </body>
+</html>

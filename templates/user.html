@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <p> <h1>Welcome to User Create Portal</h1> </p>
+            <form action="/create" method="POST">
+                <label for="first">First name</label>
+                <input type="text" id="first" name="first" required> <br><br>
+                <label for="last">Last name</label>
+                <input type="text" id="last"name="last" required><br><br>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" value="0"><br><br>
+                <input type="submit" id="sub" name="sub" value="submit"> <br> {{status}} <br>
+            </form>
+                <a href="{{ url_for('show') }}" > <button>Go to Home Page</button></a>
+                <hr>
+                <a href="{{ url_for('uploader') }}" > Click here for file upload </a>
+        </body>
+    </head>
+</html>

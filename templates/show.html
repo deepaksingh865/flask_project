@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        </style>
+        
+    </head>
+        <body>
+            <p> <h2> Enter Id to find and delete: </h2> </p>
+            <form action="/home" method="POST">
+                <label for="id">Enter ID</label>
+                <input type="text" id="id" name="id" required>
+                <input type="submit" id="sub" name="find" value="Find">    
+                <input type="submit" id="sub" name="delete" value="Delete" formaction="/delete">
+            </form>
+            
+            <table>
+                <p style="color:red;"> {{msg}} </p>
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                </tr>
+                <tr>  
+                {% for i in usershow %}
+                 <td> {{i}} </td>
+                  {% endfor %}
+                </tr>
+            </table>
+            <br> <br>
+            <a href="{{ url_for('user') }}"><button>Create</button></a>
+            <a href="{{ url_for('update') }}"><button>Update</button></a>
+            <a href="{{ url_for('show') }}" > <button>Refresh</button></a>
+            <hr>
+            <h2> All users details</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                  </tr>
+                 
+                {% for row in allusers %}
+                <tr> 
+                    <td>{{row.id}}</td>
+                    <td>{{row.first}}</td>
+                    <td>{{row.last}}</td>
+                    <td>{{row.age}}</td>
+                </tr>
+                  {% endfor %}
+                </tr>
+            </table>
+        </body>
+    
+</html>
